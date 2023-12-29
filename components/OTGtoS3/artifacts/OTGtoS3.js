@@ -23,6 +23,7 @@ var watcher = chokidar_1.watch(directoryToWatch, {
 console.log("Watching directory: ".concat(directoryToWatch));
 
 // Upload function
+
 var uploadFileToS3 = function (filePath) {
   fs.readFile(filePath, function (err, data) {
     if (err) {
