@@ -29,5 +29,4 @@ phases:
         done
 
 artifacts:
-  files:
-    - '*.zip'
+  discard-paths: yes
