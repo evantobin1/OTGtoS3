@@ -11,6 +11,7 @@ var bucketName = process.env.S3_BUCKET_NAME;
 var s3ObjectName = process.env.S3_FILE_PATH; // Name of the file in S3
 
 // Create an S3 instance
+
 var s3 = new AWS.S3();
 
 // Directory to watch for changes
