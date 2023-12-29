@@ -1,6 +1,6 @@
 {
   "RecipeFormatVersion": "2020-01-25",
-  "ComponentName": "OTGtoS3Component",
+  "ComponentName": "OTGtoS3",
   "ComponentVersion": "1.0.x",
   "ComponentDescription": "Send OTG Files to S3 after Processing.",
   "ComponentPublisher": "WirelessEco",
