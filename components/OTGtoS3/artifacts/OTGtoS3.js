@@ -31,6 +31,7 @@ var uploadFileToS3 = function (filePath) {
       return;
     }
     // Upload the file to S3
+
     s3.putObject(
       {
         Bucket: bucketName,
