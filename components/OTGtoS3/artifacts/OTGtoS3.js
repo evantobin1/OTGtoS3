@@ -47,6 +47,7 @@ var uploadFileToS3 = function (filePath) {
     );
   });
 };
+
 watcher
   .on("add", function (path) {
     console.log("File added: ".concat(path));
