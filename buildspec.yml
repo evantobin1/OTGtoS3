@@ -1,9 +1,29 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+  pre_build:
+    commands:
+      - echo "Pre-build phase: Setting up necessary dependencies..."
+      # Install dependencies or perform pre-build setup
   build:
     commands:
-      - echo "Zipping repository contents"
-      - zip -r myRepo.zip .
-      - echo "Uploading to S3"
-      - aws s3 cp myRepo.zip s3://$BUCKET_NAME/myRepo.zip
+      - echo "Build phase: Preparing Greengrass components..."
+      # Zip component files and upload to S3
+      - zip -r myComponent.zip path/to/component/files
+      - aws s3 cp myComponent.zip s3://$BUCKET_NAME/myComponent.zip
+  post_build:
+    commands:
+      - echo "Post-build phase: Triggering Lambda function..."
+      - >
+          if [ "$PIPELINE_ACTION" = "initialize" ]; then
+            aws lambda invoke --function-name $INIT_LAMBDA_FUNCTION_NAME --payload '{ "action": "initialize", "component": "myComponent" }' response.json
+          else
+            aws lambda invoke --function-name $UPDATE_LAMBDA_FUNCTION_NAME --payload '{ "action": "update", "component": "myComponent" }' response.json
+          fi
+
+artifacts:
+  files:
+    - myComponent.zip
