@@ -18,15 +18,12 @@ phases:
           echo "Zipping and uploading $COMPONENT_NAME..."
           zip -r "${COMPONENT_NAME}.zip" "$dir"
           aws s3 cp "${COMPONENT_NAME}.zip" "s3://$BUCKET_NAME/$COMPONENT_NAME/${COMPONENT_NAME}.zip"
+          RECIPE=$(cat "$dir/recipes/recipe.json")
+          aws lambda invoke --function-name $UPDATE_LAMBDA_FUNCTION_NAME --payload "{ \"component\": \"$COMPONENT_NAME\", \"recipe\": $RECIPE }" response_${COMPONENT_NAME}.json
         done
   post_build:
     commands:
-      - echo "Post-build phase... Triggering Lambda function for each component..."
-      - >
-        for dir in */ ; do
-          COMPONENT_NAME="${dir%/}"
-          aws lambda invoke --function-name $UPDATE_LAMBDA_FUNCTION_NAME --payload "{ \"component\": \"$COMPONENT_NAME\" }" response_${COMPONENT_NAME}.json
-        done
+      - echo "Post-build phase... Completed."
 
 artifacts:
   discard-paths: yes
