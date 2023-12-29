@@ -1,7 +1,7 @@
 {
   "RecipeFormatVersion": "2020-01-25",
   "ComponentName": "OTGtoS3Component",
-  "ComponentVersion": "1.0.4",
+  "ComponentVersion": "1.0.0",
   "ComponentDescription": "Send OTG Files to S3 after Processing.",
   "ComponentPublisher": "WirelessEco",
   "ComponentConfiguration": {},
@@ -11,11 +11,11 @@
         "os": "linux"
       },
       "Lifecycle": {
-        "run": "node {artifacts:decompressedPath}/OTGToS3/1.0.4/OTGToS3/OTGToS3/artifacts/OTGToS3.js"
+        "run": "node {artifacts:decompressedPath}/OTGToS3/1.0.0/OTGToS3/OTGToS3/artifacts/OTGToS3.js"
       },
       "Artifacts": [
         {
-          "URI": "s3://wirelesseco-components-bucket/OTGtoS3Component/1.0.4/OTGToS3.zip",
+          "URI": "s3://greengrassstack-componentsbucket322c7052-vjazwaknja08/OTGtoS3/OTGtoS3.zip",
           "Unarchive": "ZIP"
         }
       ]
@@ -25,11 +25,11 @@
         "os": "windows"
       },
       "Lifecycle": {
-        "run": "node {artifacts:decompressedPath}\\OTGToS3\\1.0.4\\OTGToS3\\OTGToS3\\artifacts\\OTGToS3.js "
+        "run": "node {artifacts:decompressedPath}\\OTGToS3\\1.0.0\\OTGToS3\\OTGToS3\\artifacts\\OTGToS3.js "
       },
       "Artifacts": [
         {
-          "URI": "s3://wirelesseco-components-bucket/OTGtoS3Component/1.0.4/OTGToS3.zip",
+          "URI": "s3://greengrassstack-componentsbucket322c7052-vjazwaknja08/OTGtoS3/OTGtoS3.zip",
           "Unarchive": "ZIP"
         }
       ]
