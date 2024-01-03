@@ -18,6 +18,7 @@ var s3 = new AWS.S3();
 var directoryToWatch = process.env.DIRECTORY_TO_WATCH; // Replace with your directory path
 var watcher = chokidar_1.watch(directoryToWatch, {
   ignored: /(^|[\/\\])\../,
+
   persistent: true,
 });
 
