@@ -15,7 +15,7 @@
       },
       "Artifacts": [
         {
-          "URI": "s3://greengrassstack-componentsbucket322c7052-k4nkzsetbiak/OTGtoS3/OTGtoS3.zip",
+          "URI": "s3://{bucketName}/OTGtoS3/OTGtoS3.zip",
           "Unarchive": "ZIP"
         }
       ]
@@ -29,7 +29,7 @@
       },
       "Artifacts": [
         {
-          "URI": "s3://greengrassstack-componentsbucket322c7052-k4nkzsetbiak/OTGtoS3/OTGtoS3.zip",
+          "URI": "s3://{bucketName}/OTGtoS3/OTGtoS3.zip",
           "Unarchive": "ZIP"
         }
       ]
