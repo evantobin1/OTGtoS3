@@ -7,11 +7,10 @@ var chokidar_1 = require("chokidar");
 
 // Update these values with your own
 var region = process.env.AWS_REGION;
-var bucketName = process.env.S3_BUCKET_NAME;
 var s3ObjectName = process.env.S3_FILE_PATH; // Name of the file in S3
+var uploadBucketName = process.env.uploadBucketName;
 
 // Create an S3 instance
-
 var s3 = new AWS.S3();
 
 // Directory to watch for changes
@@ -34,7 +33,7 @@ var uploadFileToS3 = function (filePath) {
     // Upload the file to S3
     s3.putObject(
       {
-        Bucket: bucketName,
+        Bucket: uploadBucketName,
         Key: s3ObjectName,
         Body: data,
       },

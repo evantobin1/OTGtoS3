@@ -15,7 +15,7 @@
       },
       "Artifacts": [
         {
-          "URI": "s3://{bucketName}/OTGtoS3/OTGtoS3.zip",
+          "URI": "s3://{componentsBucketName}/OTGtoS3/OTGtoS3.zip",
           "Unarchive": "ZIP"
         }
       ]
@@ -27,9 +27,14 @@
       "Lifecycle": {
         "run": "node {artifacts:decompressedPath}\\OTGToS3\\{componentVersion}\\OTGToS3\\OTGToS3\\artifacts\\OTGToS3.js "
       },
+      "Configuration": {
+        "DefaultConfiguration": {
+          "uploadBucketName": "{uploadBucketName}"
+        }
+      },
       "Artifacts": [
         {
-          "URI": "s3://{bucketName}/OTGtoS3/OTGtoS3.zip",
+          "URI": "s3://{componentsBucketName}/OTGtoS3/OTGtoS3.zip",
           "Unarchive": "ZIP"
         }
       ]
