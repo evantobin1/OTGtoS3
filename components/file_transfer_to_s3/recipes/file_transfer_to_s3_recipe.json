@@ -1,0 +1,31 @@
+{
+  "RecipeFormatVersion": "2020-01-25",
+  "ComponentName": "com.enovis.duo-poc.transfer_file_to_s3",
+  "ComponentVersion": "1.0.0",
+  "ComponentType": "aws.greengrass.generic",
+  "ComponentDescription": "com.enovis.duo-poc.transfer_file_to_s3",
+  "ComponentPublisher": "com.enovis.duo-poc",
+  "ComponentConfiguration": {
+    "DefaultConfiguration": {
+      "Path": "/tmp/data"
+    }
+  },
+  "Manifests": [
+    {
+      "Platform": {
+        "os": "linux"
+      },
+      "Name": "Linux",
+      "Lifecycle": {
+        "run": "python3 {artifacts:decompressedPath}/Archive/file_transfer_to_s3.py '{configuration:/Path}'"
+      },
+      "Artifacts": [
+        {
+          "Uri": "s3://com.enovis.duo-poc/greengrass-components/file_transfer_to_s3/1.0.1/Archive.zip",
+          "Unarchive": "ZIP"
+        }
+      ]
+    }
+  ],
+  "Lifecycle": {}
+}
