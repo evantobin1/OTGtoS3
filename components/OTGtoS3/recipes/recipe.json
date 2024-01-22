@@ -20,7 +20,7 @@
       },
       "Artifacts": [
         {
-          "URI": "s3://{componentsBucketName}/OTGtoS3/OTGtoS3.zip",
+          "URI": "s3://{componentsBucketName}/OTGtoS3/{componentVersion}/OTGtoS3.zip",
           "Unarchive": "ZIP"
         }
       ]
@@ -39,7 +39,7 @@
       },
       "Artifacts": [
         {
-          "URI": "s3://{componentsBucketName}/OTGtoS3/OTGtoS3.zip",
+          "URI": "s3://{componentsBucketName}/OTGtoS3/{componentVersion}/OTGtoS3.zip",
           "Unarchive": "ZIP"
         }
       ]
