@@ -15,7 +15,6 @@ class MyHandler(FileSystemEventHandler):
             print(f"Detected new file: {file_path}")
 
             s3 = boto3.client('s3')
-            bucket_name = os.environ.get("uploadBucketName")
             file_name = os.path.basename(file_path)
             folder_name = "inbox"
             key = f'{folder_name}/{file_name}'
@@ -39,7 +38,10 @@ class MyHandler(FileSystemEventHandler):
 
 message = "Path: %s!" % sys.argv[1]
 print(message)
+message = "Bucket Name: %s!" % sys.argv[2]
+print(message)
 path = sys.argv[1]
+bucket_name = sys.argv[2]
 observer = Observer()
 observer.schedule(MyHandler(), path, recursive=False)
 observer.start()
