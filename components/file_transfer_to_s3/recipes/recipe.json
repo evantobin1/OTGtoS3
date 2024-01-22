@@ -11,7 +11,7 @@
         "os": "linux"
       },
       "Lifecycle": {
-        "run": "python3 {artifacts:decompressedPath}/file_transfer_to_s3/file_transfer_to_s3/artifacts/file_transfer_to_s3.py '{configuration:/Path}' '{configuration:/uploadBucketName}'"
+        "run": "python3 {artifacts:decompressedPath}/file_transfer_to_s3/file_transfer_to_s3/artifacts/file_transfer_to_s3.py '{configuration:Path}' '{configuration:uploadBucketName}'"
       },
       "Configuration": {
         "DefaultConfiguration": {
