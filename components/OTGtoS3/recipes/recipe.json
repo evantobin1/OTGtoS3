@@ -11,7 +11,7 @@
         "os": "linux"
       },
       "Lifecycle": {
-        "run": "node {artifacts:decompressedPath}/OTGToS3/{componentVersion}/OTGToS3/OTGToS3/artifacts/OTGToS3.js"
+        "run": "node {artifacts:decompressedPath}/OTGToS3/OTGToS3/artifacts/OTGToS3.js"
       },
       "Configuration": {
         "DefaultConfiguration": {
@@ -30,7 +30,7 @@
         "os": "windows"
       },
       "Lifecycle": {
-        "run": "node {artifacts:decompressedPath}\\OTGToS3\\{componentVersion}\\OTGToS3\\OTGToS3\\artifacts\\OTGToS3.js "
+        "run": "node {artifacts:decompressedPath}\\OTGToS3\\OTGToS3\\artifacts\\OTGToS3.js "
       },
       "Configuration": {
         "DefaultConfiguration": {
@@ -46,3 +46,6 @@
     }
   ]
 }
+
+export AWS_ACCESS_KEY_ID=AKIAZFLJ6IUUDJF56XFG
+export AWS_SECRET_ACCESS_KEY=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
