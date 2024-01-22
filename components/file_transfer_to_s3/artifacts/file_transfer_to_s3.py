@@ -40,7 +40,7 @@ message = "Path: %s!" % sys.argv[1]
 print(message)
 message = "Bucket Name: %s!" % sys.argv[2]
 print(message)
-path = sys.argv[1]
+path = "/tmp/data"
 bucket_name = sys.argv[2]
 observer = Observer()
 observer.schedule(MyHandler(), path, recursive=False)
