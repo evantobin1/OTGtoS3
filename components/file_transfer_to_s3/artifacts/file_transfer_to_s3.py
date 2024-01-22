@@ -36,19 +36,19 @@ class MyHandler(FileSystemEventHandler):
         self.process(event)
 
 
-message = "Path: %s!" % sys.argv[1]
-print(message)
-message = "Bucket Name: %s!" % sys.argv[2]
-print(message)
-path = "/tmp/data"
-bucket_name = sys.argv[2]
-observer = Observer()
-observer.schedule(MyHandler(), path, recursive=False)
-observer.start()
+if __name__ == "__main__":
+    path = sys.argv[1]
+    bucket_name = sys.argv[2]
+    print("Path: %s!" % sys.argv[1])
+    print("Bucket Name: %s!" % sys.argv[2])
 
-try:
-    while True:
-        time.sleep(5)
-except KeyboardInterrupt:
-    observer.stop()
-observer.join()
+    observer = Observer()
+    observer.schedule(MyHandler(), path, recursive=False)
+    observer.start()
+
+    try:
+        while True:
+            time.sleep(5)
+    except KeyboardInterrupt:
+        observer.stop()
+    observer.join()
