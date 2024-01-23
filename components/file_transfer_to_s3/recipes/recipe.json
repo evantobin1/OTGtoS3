@@ -5,12 +5,6 @@
   "ComponentDescription": "Send OTG Files to S3 after Processing.",
   "ComponentPublisher": "WirelessEco",
   "ComponentConfiguration": {},
-  "ComponentDependencies": {
-    "aws.greengrass.S3Uploader": {
-      "VersionRequirement": "^2.0.0",
-      "DependencyType": "HARD"
-    }
-  },
   "Manifests": [
     {
       "Platform": {
